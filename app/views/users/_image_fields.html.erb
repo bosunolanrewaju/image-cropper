@@ -1,0 +1,6 @@
+<div class="nested-fields">
+  <%= image_tag f.object.avatar.to_s %>
+  <%= f.file_field :avatar %>
+  <%= link_to 'Crop Image', edit_image_path(f.object) if f.object.id.present? %>
+  <%= link_to_remove_association "remove image", f %>
+</div>

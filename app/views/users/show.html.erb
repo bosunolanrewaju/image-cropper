@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+Name: <%= @user.name %>
+<% @user.images.each_with_index do |image, index| %>
+  <p>Image #<%= index + 1 %>: <%= image_tag image.avatar.url(:thumb) if image.avatar.url.present? %></p>
+<% end %>
+<p>----</p>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
